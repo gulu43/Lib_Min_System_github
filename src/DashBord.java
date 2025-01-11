@@ -150,6 +150,9 @@ public class DashBord extends javax.swing.JFrame {
 
     private void book_availableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_availableActionPerformed
         // TODO add your handling code here:
+        Books_Avialable books = new Books_Avialable();
+        books.setVisible(true);
+        
     }//GEN-LAST:event_book_availableActionPerformed
 
     private void remove_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_bookActionPerformed
