@@ -1,3 +1,10 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -190,9 +197,47 @@ public class Add_Books extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+//  .toUpperCase()
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String url="jdbc:mysql://localhost/library_db";
+       String user="root";
+       String pwd= "";
+       String query="insert into books values(?,?,?,?,?);";
+       String id=t1.getText().toUpperCase();
+       String category=t2.getText().toUpperCase();
+       String name=t3.getText().toUpperCase();
+       String author=t4.getText().toUpperCase();
+       int copies=Integer.parseInt(t5.getText().toUpperCase());
+        String checkquery="update books set copies=copies+"+copies+" where name='"+name+"' and category='"+category+"' and author='"+author+"';";
+       try {
+            Connection conn= DriverManager.getConnection(url,user,pwd);
+            Statement stmnt=conn.createStatement();
+            int rows=stmnt.executeUpdate(checkquery);
+            if(rows>0)
+            {
+                JOptionPane.showMessageDialog(this,"One record added successfully");
+            }
+            else
+            {
+                PreparedStatement stm = conn.prepareCall(query);
+                stm.setString(1,id);
+                stm.setString(2,category);
+                stm.setString(3,name);
+                stm.setString(4,author);
+                stm.setInt(5,copies);
+                stm.execute();
+                JOptionPane.showMessageDialog(this,"One record added successfully");
+            }
+           t1.setText(null);
+           t2.setText(null);
+           t3.setText(null);
+           t4.setText(null);
+           t5.setText(null);
+       }
+       catch(Exception e)  {
+        JOptionPane.showMessageDialog(this, e);
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
