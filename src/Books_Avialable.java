@@ -1,3 +1,7 @@
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -43,6 +47,11 @@ public class Books_Avialable extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Fatch Data");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Back to Dashbord");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +90,37 @@ public class Books_Avialable extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model= (DefaultTableModel)jTable1.getModel();
+       String url="jdbc:mysql://localhost/library_db";
+       String user="root";
+       String pwd= "";
+       String query= "select * from books;";
+       try
+       {
+           Connection conn= DriverManager.getConnection(url,user,pwd);
+           Statement stm=conn.createStatement();
+           ResultSet rs= stm.executeQuery(query);
+           while(rs.next())
+           {
+               String bookid=rs.getString("book_id");
+               String category=rs.getString("category");
+               String name=rs.getString("name"); 
+               String author=rs.getString("author");
+               int copies=rs.getInt("copies");
+               
+//             model is feeding the table with data 1 by 1 ;mvc type thing.
+               model.addRow(new Object[] {bookid,category,name,author,copies}); 
+           }
+           rs.close();
+           stm.close(); 
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(this,e.getMessage()); 
+       }  
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
