@@ -14,6 +14,7 @@ public class DashBord extends javax.swing.JFrame {
      */
     public DashBord() {
         initComponents();
+        
     }
 
     /**
@@ -161,6 +162,9 @@ public class DashBord extends javax.swing.JFrame {
 
     private void add_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_bookActionPerformed
         // TODO add your handling code here:
+        Add_Books ad_obj = new Add_Books();
+        ad_obj.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_add_bookActionPerformed
 
     private void fire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fire_staffActionPerformed
