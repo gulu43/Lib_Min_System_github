@@ -90,7 +90,7 @@ public class DashBord extends javax.swing.JFrame {
         });
 
         dashBord_edit_btn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        dashBord_edit_btn.setText("Edir");
+        dashBord_edit_btn.setText("Edit Admin");
         dashBord_edit_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dashBord_edit_btnActionPerformed(evt);
@@ -118,8 +118,8 @@ public class DashBord extends javax.swing.JFrame {
                             .addComponent(hire_staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(fire_staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(dashBord_edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(143, 143, 143)
+                        .addComponent(dashBord_edit_btn)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -190,6 +190,8 @@ public class DashBord extends javax.swing.JFrame {
 
     private void dashBord_edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBord_edit_btnActionPerformed
         // TODO add your handling code here:
+        Edit_admin edit_admin_obj = new Edit_admin();
+        edit_admin_obj.setVisible(true);
     }//GEN-LAST:event_dashBord_edit_btnActionPerformed
 
     /**
