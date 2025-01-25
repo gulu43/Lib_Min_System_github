@@ -167,6 +167,30 @@ public class Edit_admin extends javax.swing.JFrame {
        String url="jdbc:mysql://localhost/library_db";
        String user="root";
        String pwd= "";
+       String column=columnlist.getSelectedItem().toString();
+       String id=t1.getText().trim();
+       
+       if(id != null && !id.isEmpty() ){
+           String query="update admin set "+column+"='"+id+"';";
+       try {
+            Connection conn= DriverManager.getConnection(url,user,pwd);
+            Statement stmnt=conn.createStatement();
+            int rows=stmnt.executeUpdate(query);
+            if(rows>0)
+            {
+                JOptionPane.showMessageDialog(this,"Updated "+"field "+column+ " value to "+id+"Successfully.");
+            }
+            t1.setText("");
+           
+       }
+       catch(Exception e)  {
+        JOptionPane.showMessageDialog(this, e.getMessage());
+       }
+       }else{
+           JOptionPane.showMessageDialog(this,"Value can not be empty");
+       }
+       
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
