@@ -22,7 +22,7 @@ public class Add_Books extends javax.swing.JFrame {
     public Add_Books() {
         initComponents();
 //        dont know what is it 
-//        setDefaultCloseOperation(Add_Books.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(Add_Books.DISPOSE_ON_CLOSE);
     }
 
     /**

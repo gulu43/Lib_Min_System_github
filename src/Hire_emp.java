@@ -20,10 +20,11 @@ import javax.swing.*;
 public class Hire_emp extends javax.swing.JFrame {
 
     /**
-     * Creates new form Hire_emp
+     * Creates new form Hire_
      */
     public Hire_emp() {
         initComponents();
+        setDefaultCloseOperation(Add_Books.DISPOSE_ON_CLOSE);
     }
 
     /**

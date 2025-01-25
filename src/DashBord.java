@@ -158,6 +158,8 @@ public class DashBord extends javax.swing.JFrame {
 
     private void remove_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_bookActionPerformed
         // TODO add your handling code here:
+        Remove_Books rem_bok_obj = new Remove_Books();
+        rem_bok_obj.setVisible(true);
     }//GEN-LAST:event_remove_bookActionPerformed
 
     private void add_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_bookActionPerformed
