@@ -171,6 +171,8 @@ public class DashBord extends javax.swing.JFrame {
 
     private void fire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fire_staffActionPerformed
         // TODO add your handling code here:
+        Remove_Staff rStaff = new Remove_Staff();
+        rStaff.setVisible(true);
     }//GEN-LAST:event_fire_staffActionPerformed
 
     private void hire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hire_staffActionPerformed
