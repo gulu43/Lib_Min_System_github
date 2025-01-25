@@ -177,6 +177,9 @@ public class DashBord extends javax.swing.JFrame {
 
     private void staff_detailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staff_detailActionPerformed
         // TODO add your handling code here:
+        Staff_Details staff_details_obj = new Staff_Details();
+        staff_details_obj.setVisible(true);
+//           this.dispose();
     }//GEN-LAST:event_staff_detailActionPerformed
 
     private void dashBord_edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBord_edit_btnActionPerformed
