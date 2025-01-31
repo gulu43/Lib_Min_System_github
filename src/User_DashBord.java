@@ -148,6 +148,8 @@ public class User_DashBord extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        Search_book user_dashbord_to_book_search = new Search_book();
+        user_dashbord_to_book_search.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

@@ -47,7 +47,7 @@
                   <Component id="jLabel1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="39" max="32767" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="213" max="-2" attributes="0"/>
+                      <Component id="find_b_tf" min="-2" pref="213" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="91" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -72,7 +72,7 @@
                       <Component id="jButton1" max="32767" attributes="0"/>
                       <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jTextField1" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="find_b_tf" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="144" max="-2" attributes="0"/>
@@ -93,14 +93,14 @@
         <Property name="text" type="java.lang.String" value="Enter Name or Jonra to search"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="find_b_tf">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="find_b_tfActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
@@ -115,6 +115,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="to dash bord"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
