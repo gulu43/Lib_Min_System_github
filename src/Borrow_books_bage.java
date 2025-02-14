@@ -20,6 +20,11 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     /**
      * Creates new form Borrow_books_bage
      */
+    public String userDash_id;
+    public Borrow_books_bage(String id_) {
+        this.userDash_id = id_;
+        initComponents();
+    }
     public Borrow_books_bage() {
         initComponents();
     }
@@ -38,8 +43,9 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         book_n_val = new javax.swing.JTextField();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        b_n_var = new javax.swing.JLabel();
         no_of_days = new javax.swing.JTextField();
+        u_l_var = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,7 +68,9 @@ public class Borrow_books_bage extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("book_name");
+        b_n_var.setText("book_name");
+
+        u_l_var.setText("User_name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,13 +89,15 @@ public class Borrow_books_bage extends javax.swing.JFrame {
                         .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 52, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(u_l_var, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(b_n_var, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(no_of_days)
+                .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn2)
                 .addGap(41, 41, 41))
@@ -105,7 +115,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                     .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(b_n_var, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(u_l_var, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
                 .addContainerGap(54, Short.MAX_VALUE))
@@ -140,6 +151,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
             found = true;
         }
         if (found) {
+            u_l_var.setText(userDash_id);
+            b_n_var.setText(find_word);
             btn2.setEnabled(true); // Enable btn2 when book is found
         } else {
             JOptionPane.showMessageDialog(this, "Sorry, book not found. try to find it on find books page it has better seo ");
@@ -157,6 +170,9 @@ public class Borrow_books_bage extends javax.swing.JFrame {
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_btn2ActionPerformed
 
     /**
@@ -195,12 +211,13 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel b_n_var;
     private javax.swing.JTextField book_n_val;
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField no_of_days;
+    private javax.swing.JLabel u_l_var;
     // End of variables declaration//GEN-END:variables
 }
