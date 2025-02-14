@@ -169,10 +169,15 @@ public class Borrow_books_bage extends javax.swing.JFrame {
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
-    String url = "jdbc:mysql://localhost/library_db";
+     String url = "jdbc:mysql://localhost/library_db";
     String user = "root";
     String pwd = "";
+
+    // Insert query for borrow_books_tb
     String query = "INSERT INTO borrow_books_tb (user_name, book_name, day_left, due_amt) VALUES (?, ?, ?, ?)";
+
+    // Update query to decrease book copies
+    String updateQuery = "UPDATE books SET copies = copies - 1 WHERE name = ? AND copies > 0";
 
     String user_name = u_l_var.getText().toUpperCase();
     String book_name = b_n_var.getText().toUpperCase();
@@ -186,8 +191,10 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     int due = 0;
 
     try (Connection conn = DriverManager.getConnection(url, user, pwd);
-         PreparedStatement stm = conn.prepareStatement(query)) {
+         PreparedStatement stm = conn.prepareStatement(query);
+         PreparedStatement updateStm = conn.prepareStatement(updateQuery)) {
 
+        // Insert borrow record
         stm.setString(1, user_name);
         stm.setString(2, book_name);
         stm.setInt(3, days);
@@ -196,7 +203,15 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         int rows = stm.executeUpdate();
         
         if (rows > 0) {
-            JOptionPane.showMessageDialog(this, "One Book Borrowed!");
+            // Update book copies
+            updateStm.setString(1, book_name);
+            int updatedRows = updateStm.executeUpdate();
+
+            if (updatedRows > 0) {
+                JOptionPane.showMessageDialog(this, "One Book Borrowed! Copies updated.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Book borrowed, but copies were not updated (possibly 0 left).");
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Failed to borrow the book.");
         }
