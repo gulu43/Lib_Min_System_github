@@ -36,8 +36,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         book_n_val = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         no_of_days = new javax.swing.JTextField();
 
@@ -47,17 +47,18 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Borrow Book");
 
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn1.setText("Search");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("ok");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn2.setText("ok");
+        btn2.setEnabled(false);
+        btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn2ActionPerformed(evt);
             }
         });
 
@@ -79,7 +80,7 @@ public class Borrow_books_bage extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 52, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -88,7 +89,7 @@ public class Borrow_books_bage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(no_of_days)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btn2)
                 .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
@@ -98,11 +99,11 @@ public class Borrow_books_bage extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                     .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
@@ -113,7 +114,7 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
 
     String url = "jdbc:mysql://localhost/library_db";
@@ -129,22 +130,34 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         pstmt.setString(1, find_word);
 
         ResultSet rs = pstmt.executeQuery();
+        boolean found = false;
+        
         //  HEAD FIRST JAVA 
         while (rs.next()) {
             String name = rs.getString("name");
             JOptionPane.showMessageDialog(this, "This book is aviable:- "+name);
-//            model.addRow(new Object[]{ name});
+//            model.addRow(new Object[]{ name});  
+            found = true;
         }
+        if (found) {
+            btn2.setEnabled(true); // Enable btn2 when book is found
+        } else {
+            JOptionPane.showMessageDialog(this, "Sorry, book not found. try to find it on find books page it has better seo ");
+            btn2.setEnabled(false); // Ensure btn2 remains disabled
+        }
+        
+        
         rs.close();
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, e.getMessage());
+        btn2.setEnabled(false);
     }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,8 +196,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField book_n_val;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
