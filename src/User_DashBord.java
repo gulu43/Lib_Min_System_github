@@ -12,7 +12,14 @@ public class User_DashBord extends javax.swing.JFrame {
     /**
      * Creates new form User_DashBord
      */
+    public String userId;
+    public User_DashBord(String id) {
+        this.userId = id;
+        System.out.println("you hooo"+userId);
+        initComponents();
+    }
     public User_DashBord() {
+        this.userId = "Guest"; // Default value if no ID is provided
         initComponents();
     }
 

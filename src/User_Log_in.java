@@ -191,13 +191,14 @@ public class User_Log_in extends javax.swing.JFrame {
 //              remamber name == password in var name do not confuse 
                 if(realpswrd.equals(name)) 
                  {   
-                    User_DashBord udsh= new User_DashBord();
+                    User_DashBord udsh= new User_DashBord(id);
                     udsh.setVisible(true);
                     this.dispose();
                  }
                  else
                  {
                    JOptionPane.showMessageDialog(this,"username or password entered is wrong");  
+                   
                  }
                 
             } else {
