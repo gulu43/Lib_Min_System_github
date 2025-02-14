@@ -183,7 +183,7 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     String book_name = b_n_var.getText().toUpperCase();
     int days = Integer.parseInt(no_of_days.getText());
 
-    if (days > 14) {
+    if (days > 14 || days < 0) {
         JOptionPane.showMessageDialog(this, "More than 14 days is not allowed. Auto-set to 14 days.");
         days = 14;
     }
