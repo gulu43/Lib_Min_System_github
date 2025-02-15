@@ -115,9 +115,7 @@ public class Return_book extends javax.swing.JFrame {
 
     String queryChack = "SELECT name FROM books WHERE name = ?";
     try (Connection conn = DriverManager.getConnection(url, user, pwd);
-         PreparedStatement pstmt = conn.prepareStatement(queryChack);
-//         Statement stm = conn.createStatement();
-            ) {
+         PreparedStatement pstmt = conn.prepareStatement(queryChack)) {
 
         pstmt.setString(1, find_word);
 
@@ -134,7 +132,15 @@ public class Return_book extends javax.swing.JFrame {
         if (found) {
             System.out.println(id_var);
             
-            // Fetch data for the borrowed book
+            //globle variable for sending data{
+//                    StringBuilder user_name_var_globle = null;
+//                  StringBuilder book_name_var_globle= null;
+//                  int day_left_var_globle = 0;
+//                  int due_amt_var_globle= 0;
+//                                             }
+            
+            
+            // 1) Fetch data for the borrowed book
             String query_GetData = "SELECT * FROM borrow_books_tb WHERE user_name = ? AND book_name = ?";
             try (Connection conn_GetData = DriverManager.getConnection(url, user, pwd);
                  PreparedStatement pstmt_GetData = conn_GetData.prepareStatement(query_GetData)) {
@@ -148,12 +154,48 @@ public class Return_book extends javax.swing.JFrame {
                     String book_name_var = rs_GetData.getString("book_name");
                     int day_left_var = rs_GetData.getInt("day_left");
                     int due_amt_var = rs_GetData.getInt("due_amt");
-
+                    
+//                    //assigin values to globle variable {
+//                    user_name_var_globle = new StringBuilder(user_name_var);
+//                    book_name_var_globle = new StringBuilder(book_name_var);
+//                    day_left_var_globle = day_left_var;
+//                    due_amt_var_globle = due_amt_var;
+//                    //}
+                    
                     // Display the data
                     System.out.println(" user_name-> " + user_name_var +
                                        ",\nbook_name-> " + book_name_var +
                                        ",\nday_left-> " + day_left_var +
                                        ",\namt_due-> " + due_amt_var + ". ");
+                        
+                        //  2)Sending data to other table  {
+                        try {
+                            // 2. Create the PreparedStatement
+                            String querySend = "INSERT INTO `return_books_tb` (`user_name`, `book_name`, `day_left`, `duw_amt`) VALUES (?, ?, ?, ?)";
+                            
+                            Connection conn_sendData = DriverManager.getConnection(url, user, pwd);
+                            PreparedStatement pstmt_sendData = conn_sendData.prepareStatement(querySend);
+
+                            // 3. Set the parameters
+                            pstmt_sendData.setString(1, user_name_var); // User name
+                            pstmt_sendData.setString(2, book_name_var); // Book name
+                            pstmt_sendData.setInt(3, day_left_var);     // Days left
+                            pstmt_sendData.setDouble(4, due_amt_var);   // Due amount
+
+                            // 4. Execute the query
+                            int rowsAffected = pstmt_sendData.executeUpdate();
+
+                            if (rowsAffected > 0) {
+                                System.out.println("Record inserted successfully.");
+                            } else {
+                                System.out.println("Failed to insert record.");
+                            }
+
+                        } catch (Exception e) {
+                            System.err.println("sending error: " + e.getMessage());
+                        }                        
+                        //}  
+                        
                 } else {
                     JOptionPane.showMessageDialog(this, "No borrowing data found for this user and book.");
                 }
@@ -161,13 +203,6 @@ public class Return_book extends javax.swing.JFrame {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error in fetching borrow data: " + e.getMessage());
             }
-
-            //Sending data to other dable
-            
-            
-            
-            
-            
             
         } else {
             JOptionPane.showMessageDialog(this, "Sorry, book not found. Try searching on the Find Books page.");
