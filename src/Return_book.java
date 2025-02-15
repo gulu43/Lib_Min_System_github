@@ -196,6 +196,35 @@ public class Return_book extends javax.swing.JFrame {
                         }                        
                         //}  
                         
+                        // 3) Increase Copies count 
+                        try {
+                            
+                            String queryUpdate = "UPDATE books SET copies = copies + 1 WHERE name = ? ";
+//                                                      
+                            Connection conn_Update = DriverManager.getConnection(url, user, pwd);
+                            PreparedStatement pstmt_Update = conn_Update.prepareStatement(queryUpdate);
+
+                            // 3. Set the parameters
+                            pstmt_Update.setString(1, book_name_var); 
+
+                            // 4. Execute the query
+                            int rowsAffected = pstmt_Update.executeUpdate();
+
+                            if (rowsAffected > 0) {
+                                System.out.println("Record Updated successfully.");
+                            } else {
+                                System.out.println("Failed to Updated record.");
+                            }
+
+                        } catch (Exception e) {
+                            System.err.println("Update error: " + e.getMessage());
+                        }                        
+                        //}  
+                        
+                        //4)Delete from borrow books {
+                        
+                        //}
+                        
                 } else {
                     JOptionPane.showMessageDialog(this, "No borrowing data found for this user and book.");
                 }
