@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
@@ -114,7 +115,9 @@ public class Return_book extends javax.swing.JFrame {
 
     String queryChack = "SELECT name FROM books WHERE name = ?";
     try (Connection conn = DriverManager.getConnection(url, user, pwd);
-         PreparedStatement pstmt = conn.prepareStatement(queryChack)) {
+         PreparedStatement pstmt = conn.prepareStatement(queryChack);
+//         Statement stm = conn.createStatement();
+            ) {
 
         pstmt.setString(1, find_word);
 
@@ -129,12 +132,45 @@ public class Return_book extends javax.swing.JFrame {
             found = true;
         }
         if (found) {
-//            JOptionPane.showMessageDialog(this, "found it "+find_word);
+            System.out.println(id_var);
+            
+            // Fetch data for the borrowed book
+            String query_GetData = "SELECT * FROM borrow_books_tb WHERE user_name = ? AND book_name = ?";
+            try (Connection conn_GetData = DriverManager.getConnection(url, user, pwd);
+                 PreparedStatement pstmt_GetData = conn_GetData.prepareStatement(query_GetData)) {
 
+                pstmt_GetData.setString(1, id_var);
+                pstmt_GetData.setString(2, find_word);
+                ResultSet rs_GetData = pstmt_GetData.executeQuery();
+
+                if (rs_GetData.next()) { // Check if any data is found
+                    String user_name_var = rs_GetData.getString("user_name");
+                    String book_name_var = rs_GetData.getString("book_name");
+                    int day_left_var = rs_GetData.getInt("day_left");
+                    int due_amt_var = rs_GetData.getInt("due_amt");
+
+                    // Display the data
+                    System.out.println(" user_name-> " + user_name_var +
+                                       ",\nbook_name-> " + book_name_var +
+                                       ",\nday_left-> " + day_left_var +
+                                       ",\namt_due-> " + due_amt_var + ". ");
+                } else {
+                    JOptionPane.showMessageDialog(this, "No borrowing data found for this user and book.");
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error in fetching borrow data: " + e.getMessage());
+            }
+
+            //Sending data to other dable
+            
+            
+            
+            
+            
+            
         } else {
-            JOptionPane.showMessageDialog(this, "Sorry, book not found. try to find it on find books page it has better seo ");
-//            btn2.setEnabled(false); // Ensure btn2 remains disabled
-            found = false;
+            JOptionPane.showMessageDialog(this, "Sorry, book not found. Try searching on the Find Books page.");
         }
         
         
