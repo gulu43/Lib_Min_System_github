@@ -222,7 +222,35 @@ public class Return_book extends javax.swing.JFrame {
                         //}  
                         
                         //4)Delete from borrow books {
-                        
+                            try {
+                            
+                            String queryDelete = "DELETE FROM borrow_books_tb WHERE user_name = ? AND book_name = ? AND day_left = ? AND due_amt = ? ORDER BY day_left ASC LIMIT 1";
+
+//                          String queryDelete = " DELETE FROM `borrow_books_tb` WHERE user_name = ? AND book_name = ? AND day_left = ? AND due_amt = ? ";                                                    
+                            Connection conn_Delete = DriverManager.getConnection(url, user, pwd);
+                            PreparedStatement pstmt_Delete = conn_Delete.prepareStatement(queryDelete);
+
+                            // 3. Set the parameters
+                            pstmt_Delete.setString(1, user_name_var); 
+                            pstmt_Delete.setString(2, book_name_var); 
+                            pstmt_Delete.setInt(3, day_left_var); 
+                            pstmt_Delete.setInt(4, due_amt_var); 
+
+                            // 4. Execute the query
+                            int rowsAffected = pstmt_Delete.executeUpdate();
+
+                            if (rowsAffected > 0 && rowsAffected <=1) {
+                                System.out.println("Record Deleted from borreded books successfully.");
+                            }else if(rowsAffected <=2){
+                                System.out.println("mansully add record because 2 recordes deleted=> "+user_name_var+" "+book_name_var+" "+day_left_var+" "+due_amt_var+" ");
+                            }else {
+                                System.out.println("Failed to delte record.");
+                                System.out.println("mansully delete record => "+user_name_var+" "+book_name_var+" "+day_left_var+" "+due_amt_var+" ");
+                            }
+
+                        } catch (Exception e) {
+                            System.err.println("delete error: " + e.getMessage());
+                        }  
                         //}
                         
                 } else {
