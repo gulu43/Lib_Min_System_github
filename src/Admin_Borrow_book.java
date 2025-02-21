@@ -1,3 +1,10 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -26,9 +33,9 @@ public class Admin_Borrow_book extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        tf_no_of_days = new javax.swing.JTextField();
+        tf_user_name = new javax.swing.JTextField();
+        tf_book_name = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -41,29 +48,39 @@ public class Admin_Borrow_book extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Borrow Book");
 
-        jTextField1.setText("No_of_Days");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tf_no_of_days.setText("No_of_Days");
+        tf_no_of_days.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tf_no_of_daysActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("User_name");
+        tf_user_name.setText("User_name");
 
-        jTextField3.setText("Book_name");
+        tf_book_name.setText("Book_name");
 
         jButton1.setText("Borrow");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Book name");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("No of Daus");
+        jLabel6.setText("No of Days");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("User name");
 
         jButton2.setText("cancle");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,10 +104,10 @@ public class Admin_Borrow_book extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))))
+                                .addComponent(tf_user_name)
+                                .addComponent(tf_book_name, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))))
                 .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
@@ -107,11 +124,11 @@ public class Admin_Borrow_book extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_user_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_book_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 1, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -123,9 +140,123 @@ public class Admin_Borrow_book extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tf_no_of_daysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_no_of_daysActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tf_no_of_daysActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    boolean user_name_found = false;
+//    boolean no_of_days_valid = false;
+    
+    String url = "jdbc:mysql://localhost/library_db";
+    String user = "root";
+    String pwd = "";
+    String user_name_f = tf_user_name.getText().toUpperCase();
+
+    //find user name code
+    String query_user_name = "SELECT name FROM user WHERE name = ?";
+    try (Connection conn_uname = DriverManager.getConnection(url, user, pwd);
+        PreparedStatement pst_uname = conn_uname.prepareStatement(query_user_name)) {
+        pst_uname.setString(1, user_name_f);
+        ResultSet rs_uname = pst_uname.executeQuery();
+        
+        while (rs_uname.next()) {
+            String uname = rs_uname.getString("name");
+            JOptionPane.showMessageDialog(this, "This User is aviable:- "+uname);  
+            user_name_found = true;
+        }
+        if (!user_name_found) {
+            JOptionPane.showMessageDialog(this, "User not found.");
+        }
+        
+    }
+    catch(Exception e){
+        user_name_found = false;
+        JOptionPane.showMessageDialog(this, e.getMessage());   
+    }
+        
+    // find book code  
+    boolean book_name_found = false;
+    String book_name_f = tf_book_name.getText().toUpperCase();
+    String query_book_name = "SELECT name FROM books WHERE name = ?";
+        try(Connection conn_bname = DriverManager.getConnection(url, user, pwd);
+            PreparedStatement pst_bname = conn_bname.prepareStatement(query_book_name))
+        {
+            pst_bname.setString(1, book_name_f);
+            ResultSet rs_bname = pst_bname.executeQuery();
+            
+            while (rs_bname.next()) {
+            String bname = rs_bname.getString("name");
+            JOptionPane.showMessageDialog(this, "This book is aviable:- "+bname);  
+            book_name_found = true;
+            }
+            if (!book_name_found) {
+                JOptionPane.showMessageDialog(this, "Book not found.");
+            }
+            
+        } catch (Exception e) {
+            book_name_found = false;
+            JOptionPane.showMessageDialog(this, e.getMessage());   
+        }
+    
+    // no of days
+    int no_of_days_f = Integer.parseInt(tf_no_of_days.getText().toUpperCase());
+    
+    if (no_of_days_f > 14 || no_of_days_f < 0) {
+        JOptionPane.showMessageDialog(this, "More than 14 days is not allowed. Auto-set to 14 days.");
+        no_of_days_f = 14;
+    }
+    // due 
+    int due = 0;
+        
+    //main sending data logic
+    String query = "INSERT INTO borrow_books_tb (user_name, book_name, day_left, due_amt) VALUES (?, ?, ?, ?)";
+    String updateQuery = "UPDATE books SET copies = copies - 1 WHERE name = ? AND copies > 0";
+    
+    if (user_name_found == true && book_name_found == true ) {
+        try (Connection conn = DriverManager.getConnection(url, user, pwd);
+         PreparedStatement stm = conn.prepareStatement(query);
+         PreparedStatement updateStm = conn.prepareStatement(updateQuery)) {
+
+        // Insert borrow record
+        stm.setString(1, user_name_f);
+        stm.setString(2, book_name_f);
+        stm.setInt(3, no_of_days_f);
+        stm.setInt(4, due);
+
+        int rows = stm.executeUpdate();
+        if (rows > 0) {
+            // Update book copies
+            updateStm.setString(1, book_name_f);
+            int updatedRows = updateStm.executeUpdate();
+
+            if (updatedRows > 0) {
+                JOptionPane.showMessageDialog(this, "One Book Borrowed! Copies updated.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Book borrowed, but copies were not updated (possibly 0 left).");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Failed to borrow the book.");
+        }
+
+        tf_user_name.setText(null);
+        tf_book_name.setText(null);
+        tf_no_of_days.setText(null);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+     
+       
+    }
+    //if close above
+    
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,8 +300,8 @@ public class Admin_Borrow_book extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField tf_book_name;
+    private javax.swing.JTextField tf_no_of_days;
+    private javax.swing.JTextField tf_user_name;
     // End of variables declaration//GEN-END:variables
 }

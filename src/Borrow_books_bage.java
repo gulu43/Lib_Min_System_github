@@ -54,6 +54,12 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Borrow Book");
 
+        book_n_val.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book_n_valActionPerformed(evt);
+            }
+        });
+
         btn1.setText("Search");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,6 +229,10 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
     }//GEN-LAST:event_btn2ActionPerformed
+
+    private void book_n_valActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_n_valActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book_n_valActionPerformed
     
     /**
      * @param args the command line arguments
