@@ -1,3 +1,7 @@
+
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,6 +16,11 @@ public class See_All_Borrowed_books extends javax.swing.JFrame {
     /**
      * Creates new form See_All_Borrowed_books
      */
+    public String id_val;
+    public See_All_Borrowed_books(String id) {
+        initComponents();
+        this.id_val = id;
+    }
     public See_All_Borrowed_books() {
         initComponents();
     }
@@ -55,6 +64,11 @@ public class See_All_Borrowed_books extends javax.swing.JFrame {
         });
 
         jButton2.setText("cancle");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +108,39 @@ public class See_All_Borrowed_books extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try {
+            
+            DefaultTableModel model= (DefaultTableModel)jTable1.getModel();
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db","root","");
+
+            // Use a PreparedStatement to avoid SQL syntax errors and injection
+            String sql = "SELECT book_name, day_left, due_amt FROM borrow_books_tb WHERE user_name = ?";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, id_val); // set the value of user_name
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String name_valurs = rs.getString("book_name");
+                int days_val = rs.getInt("day_left");
+                int due_amt_val = rs.getInt("due_amt");
+                model.addRow(new Object[] { name_valurs, days_val, due_amt_val });
+            }
+
+            rs.close();
+            pst.close();
+            con.close();           
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,e.getMessage()); 
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

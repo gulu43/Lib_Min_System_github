@@ -51,6 +51,11 @@ public class Return_book extends javax.swing.JFrame {
 
         tf1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tf1.setText("HEAD FIRST JAVA");
+        tf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Return");
@@ -278,6 +283,10 @@ public class Return_book extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf1ActionPerformed
 
     /**
      * @param args the command line arguments
