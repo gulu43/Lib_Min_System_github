@@ -23,7 +23,6 @@ public class User_Log_in extends javax.swing.JFrame {
     public User_Log_in() {
         initComponents();
     setExtendedState(JFrame.MAXIMIZED_BOTH);
-    setLayout(null);
     }
 
     /**
@@ -97,8 +96,8 @@ public class User_Log_in extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(510, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(487, 487, 487)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
@@ -125,12 +124,12 @@ public class User_Log_in extends javax.swing.JFrame {
                                     .addComponent(jButton2)
                                     .addComponent(jButton3)))))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(464, 464, 464))
+                .addContainerGap(487, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
+                .addGap(121, 121, 121)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(jLabel4)
@@ -152,7 +151,7 @@ public class User_Log_in extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(jButton3))
-                .addGap(7257, 7257, 7257))
+                .addGap(7249, 7249, 7249))
         );
 
         pack();
