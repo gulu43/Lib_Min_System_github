@@ -244,49 +244,90 @@ public class User_Log_in extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
 
-            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
+        String name = u_log_name.getText().toUpperCase().trim();
+        String password = new String(u_log_pass.getPassword());
 
-//           note id == name and name == password ;
-            String name = u_log_name.getText().toUpperCase().trim();
-            String passeord = new String(u_log_pass.getPassword());
-                
-            if (name.isEmpty() || passeord.isEmpty()) {
+        // Check if fields are empty
+        if (name.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
             return; // Stop execution
-            }
-            
-            pst.setString(1, name);
-            pst.setString(2, passeord);
-            ResultSet rs = pst.executeQuery();
-            
-            if (rs.next()) {
-//              ealpswrd means db password , we a getting from sql field name password
-                String realpswrd=rs.getString("password");
-//              checking db pass with entered password
-                if(realpswrd.equals(passeord)) 
-                 {   
-                    User_DashBord udsh= new User_DashBord(name);
-                    udsh.setVisible(true);
-                    this.dispose();
-                    JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + name + ".");
-                 }
-                 else
-                 {
-                   JOptionPane.showMessageDialog(this, "Incorrect password. Please try again.");
-                 }
-            } else {
-//              System.out.println("Invalid credentials. Please try again.");
-                JOptionPane.showMessageDialog(this,"Invalid username. Please check your credentials and try again.");
-            }
-          
-           
-        } catch (Exception e) {
-//            System.out.println("Error: " + e.getMessage());
-            JOptionPane.showMessageDialog(this, e.getMessage());
         }
+
+        // First, check if the username exists
+        PreparedStatement checkUser = con.prepareStatement("SELECT password FROM user WHERE name = ?");
+        checkUser.setString(1, name);
+        ResultSet rs = checkUser.executeQuery();
+
+        if (rs.next()) {  // Username exists
+            String realPassword = rs.getString("password");
+
+            // Check if the password matches
+            if (realPassword.equals(password)) {   
+                User_DashBord udsh = new User_DashBord(name);
+                udsh.setVisible(true);
+                this.dispose();
+                JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + name + ".");
+            } else {
+                JOptionPane.showMessageDialog(this, "Incorrect password. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid username. Please check your credentials and try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        // Close resources
+        rs.close();
+        checkUser.close();
+        con.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
+//
+//            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
+//
+//            String name = u_log_name.getText().toUpperCase().trim();
+//            String passeord = new String(u_log_pass.getPassword());
+//                
+//            if (name.isEmpty() || passeord.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
+//            return; // Stop execution
+//            }
+//            
+//            pst.setString(1, name);
+//            pst.setString(2, passeord);
+//            ResultSet rs = pst.executeQuery();
+//            
+//            if (rs.next()) {
+////              ealpswrd means db password , we a getting from sql field name password
+//                String realpswrd=rs.getString("password");
+////              checking db pass with entered password
+//                if(realpswrd.equals(passeord)) 
+//                 {   
+//                    User_DashBord udsh= new User_DashBord(name);
+//                    udsh.setVisible(true);
+//                    this.dispose();
+//                    JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + name + ".");
+//                 }
+//                 else
+//                 {
+//                   JOptionPane.showMessageDialog(this, "Incorrect password. Please try again.");
+//                 }
+//            } else {
+////              System.out.println("Invalid credentials. Please try again.");
+//                JOptionPane.showMessageDialog(this,"Invalid username. Please check your credentials and try again.");
+//            }
+//          
+//           
+//        } catch (Exception e) {
+////            System.out.println("Error: " + e.getMessage());
+//            JOptionPane.showMessageDialog(this, e.getMessage());
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
