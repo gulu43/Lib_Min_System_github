@@ -1,5 +1,7 @@
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -9,12 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.*;
 import javax.swing.*;
+import javax.swing.border.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author gulam
@@ -25,25 +27,53 @@ public class User_Log_in extends javax.swing.JFrame {
      * Creates new form User_Log_in
      */
     public User_Log_in() {
-    initComponents();
-    
-    GridBagLayout layout = new GridBagLayout();
-    getContentPane().setLayout(layout); 
-    
-    GridBagConstraints c = new GridBagConstraints();
-    c.gridx = 0;  // Position X
-    c.gridy = 0;  // Position Y
-    c.anchor = GridBagConstraints.NORTH;  // Align to top
+        initComponents();
 
-    c.insets = new Insets(30, 0, 0, 0);
-    c.weightx = 1.0;  // Allows horizontal stretching
-    c.weighty = 1.0;  // Prevents vertical stretching
+        GridBagLayout layout = new GridBagLayout();
+        getContentPane().setLayout(layout);
 
-    getContentPane().add(jPanel1, c); // Add jPanel1 with constraints
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.anchor = GridBagConstraints.NORTH;  // Align to top
 
-    setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximize the window
-    this.getContentPane().setBackground(new java.awt.Color(255, 255, 255));
-}
+        c.insets = new Insets(30, 0, 0, 0);
+        c.weightx = 1.0;
+        c.weighty = 1.0;
+
+        getContentPane().add(jPanel1, c);
+
+        setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximize the window
+        this.getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new Color(255, 255, 255)); // Dark Blue
+        jPanel1.setBorder(new LineBorder(Color.BLACK, 1, true));
+
+        for (Component btns : jPanel1.getComponents()) {
+            if (btns instanceof JButton) {
+                JButton btn = (JButton) btns;
+                btn.setBackground(Color.BLACK);
+                btn.setForeground(Color.WHITE);
+                btn.setBorderPainted(false); // Removes border effect
+                btn.setContentAreaFilled(false); // Removes lighting effect
+                btn.setOpaque(true);
+            }
+        }
+        for (Component inpts : jPanel1.getComponents()) {
+            if (inpts instanceof JTextField) {
+                JTextField txt = (JTextField) inpts;
+                txt.setBackground(Color.WHITE);
+                txt.setForeground(Color.BLACK);
+                txt.setOpaque(true); // Makes background solid
+
+                Border simpleBorder = BorderFactory.createLineBorder(Color.BLACK, 1, true);
+                txt.setBorder(simpleBorder);
+            }
+        }
+//    jPanel1.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
+//    jLabel1.setForeground(Color.BLUE); // blue text color
+//    jLabel1.setFont(new Font("Arial", Font.BOLD, 25)); // Arial Bold, Size 20
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -214,52 +244,48 @@ public class User_Log_in extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-           Class.forName("com.mysql.cj.jdbc.Driver"); 
-           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db","root","");
-           
-           PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
-           
-//           note id == name and name == password ;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
 
-           String id = u_log_name.getText().toUpperCase();
-           String name = new String(u_log_pass.getPassword());
-           
-           pst.setString(1,id);
-           pst.setString(2, name);
-           ResultSet rs = pst.executeQuery();
-           
-            if (rs.next()) {
-//                System.out.println("Login successful!");
-//                String ans = rs.getString(1);
-//                String ans2 = rs.getString(2);
-//                System.out.println("ans1-> "+ans+" ans2-> "+ans2);
+            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
+
+//           note id == name and name == password ;
+            String name = u_log_name.getText().toUpperCase().trim();
+            String passeord = new String(u_log_pass.getPassword());
                 
+            if (name.isEmpty() || passeord.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Stop execution
+            }
+            
+            pst.setString(1, name);
+            pst.setString(2, passeord);
+            ResultSet rs = pst.executeQuery();
+            
+            if (rs.next()) {
 //              ealpswrd means db password , we a getting from sql field name password
                 String realpswrd=rs.getString("password");
 //              checking db pass with entered password
-                
-//              remamber name == password in var name do not confuse 
-                if(realpswrd.equals(name)) 
+                if(realpswrd.equals(passeord)) 
                  {   
-                    User_DashBord udsh= new User_DashBord(id);
+                    User_DashBord udsh= new User_DashBord(name);
                     udsh.setVisible(true);
                     this.dispose();
+                    JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + name + ".");
                  }
                  else
                  {
-                   JOptionPane.showMessageDialog(this,"username or password entered is wrong");  
-                   
+                   JOptionPane.showMessageDialog(this, "Incorrect password. Please try again.");
                  }
-                
             } else {
-//                System.out.println("Invalid credentials. Please try again.");
-                JOptionPane.showMessageDialog(this,"Invalid Username. Please try again.");
+//              System.out.println("Invalid credentials. Please try again.");
+                JOptionPane.showMessageDialog(this,"Invalid username. Please check your credentials and try again.");
             }
           
            
         } catch (Exception e) {
 //            System.out.println("Error: " + e.getMessage());
-            JOptionPane.showMessageDialog(this,e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
