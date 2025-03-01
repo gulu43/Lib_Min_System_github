@@ -12,8 +12,8 @@ import java.awt.*;
 public class BackgroundPanel extends JPanel{
     private Image backgroundImage;
 
-    public BackgroundPanel(String filePath) {
-        backgroundImage = new ImageIcon(filePath).getImage();
+    public BackgroundPanel() {
+        backgroundImage = new ImageIcon(getClass().getResource("/images/background_img.png")).getImage();
     }
 
     @Override

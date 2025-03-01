@@ -28,14 +28,18 @@ public class User_Log_in extends javax.swing.JFrame {
      */
     public User_Log_in() {
         initComponents();
-
+        
+        // add's background img
+        BackgroundPanel bgPanel = new BackgroundPanel(); 
+        setContentPane(bgPanel);
+        
         GridBagLayout layout = new GridBagLayout();
         getContentPane().setLayout(layout);
 
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        c.anchor = GridBagConstraints.NORTH;  // Align to top
+        c.anchor = GridBagConstraints.CENTER;  // Align to top
 
         c.insets = new Insets(30, 0, 0, 0);
         c.weightx = 1.0;
@@ -51,7 +55,7 @@ public class User_Log_in extends javax.swing.JFrame {
         for (Component btns : jPanel1.getComponents()) {
             if (btns instanceof JButton) {
                 JButton btn = (JButton) btns;
-                btn.setBackground(Color.BLACK);
+                btn.setBackground(new java.awt.Color(10, 46, 161));
                 btn.setForeground(Color.WHITE);
                 btn.setBorderPainted(false); // Removes border effect
                 btn.setContentAreaFilled(false); // Removes lighting effect
@@ -61,7 +65,7 @@ public class User_Log_in extends javax.swing.JFrame {
         for (Component inpts : jPanel1.getComponents()) {
             if (inpts instanceof JTextField) {
                 JTextField txt = (JTextField) inpts;
-                txt.setBackground(Color.WHITE);
+                txt.setBackground(new java.awt.Color(213, 213, 245));
                 txt.setForeground(Color.BLACK);
                 txt.setOpaque(true); // Makes background solid
 
