@@ -69,9 +69,16 @@ public class User_Log_in extends javax.swing.JFrame {
                 txt.setForeground(Color.BLACK);
                 txt.setOpaque(true); // Makes background solid
 
-                Border simpleBorder = BorderFactory.createLineBorder(Color.BLACK, 1, true);
+                Border simpleBorder = BorderFactory.createLineBorder(new java.awt.Color(213, 213, 245), 1, true);
                 txt.setBorder(simpleBorder);
             }
+        }
+        
+        JLabel[] labels = {jLabel4, jLabel5, jLabel6}; // Store JLabels in an array
+        for (JLabel label : labels) {
+            label.setOpaque(true); // Make the background visible
+            label.setForeground(new Color(0, 0, 0, 150)); // Gray text with slight transparency
+            label.setBackground(new Color(0, 0, 0, 0)); // Fully transparent background
         }
 //    jPanel1.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
 //    jLabel1.setForeground(Color.BLUE); // blue text color
@@ -103,6 +110,8 @@ public class User_Log_in extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel4.setText("Remanber username is in upper case");
 
         jLabel5.setText("Don't hav an user account ? click on ");
@@ -124,14 +133,14 @@ public class User_Log_in extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User Login Page");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Name");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Password");
 
         u_log_pass.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +149,7 @@ public class User_Log_in extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setText("Log-in");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,58 +164,51 @@ public class User_Log_in extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(u_log_name, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(6, 6, 6)
+                                .addComponent(jButton2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jButton3))
+                            .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel5)
-                        .addGap(6, 6, 6)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jButton3)))
-                .addGap(54, 54, 54))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(84, 84, 84)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(u_log_name, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(jLabel4)
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(u_log_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(u_log_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -217,7 +220,7 @@ public class User_Log_in extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jButton3)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,25 +228,21 @@ public class User_Log_in extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(208, 208, 208)
+                .addGap(190, 190, 190)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(784, Short.MAX_VALUE))
+                .addContainerGap(348, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(75, 75, 75)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void u_log_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_log_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_u_log_passActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -288,58 +287,55 @@ public class User_Log_in extends javax.swing.JFrame {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }   
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
-//
-//            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
-//
-//            String name = u_log_name.getText().toUpperCase().trim();
-//            String passeord = new String(u_log_pass.getPassword());
-//                
-//            if (name.isEmpty() || passeord.isEmpty()) {
-//            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
-//            return; // Stop execution
-//            }
-//            
-//            pst.setString(1, name);
-//            pst.setString(2, passeord);
-//            ResultSet rs = pst.executeQuery();
-//            
-//            if (rs.next()) {
-    ////              ealpswrd means db password , we a getting from sql field name password
-//                String realpswrd=rs.getString("password");
-////              checking db pass with entered password
-//                if(realpswrd.equals(passeord)) 
-//                 {   
-//                    User_DashBord udsh= new User_DashBord(name);
-//                    udsh.setVisible(true);
-//                    this.dispose();
-//                    JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + name + ".");
-//                 }
-//                 else
-//                 {
-//                   JOptionPane.showMessageDialog(this, "Incorrect password. Please try again.");
-//                 }
-//            } else {
-////              System.out.println("Invalid credentials. Please try again.");
-//                JOptionPane.showMessageDialog(this,"Invalid username. Please check your credentials and try again.");
-//            }
-//          
-//           
-//        } catch (Exception e) {
-////            System.out.println("Error: " + e.getMessage());
-//            JOptionPane.showMessageDialog(this, e.getMessage());
-//        }
+        }
+        //        try {
+            //            Class.forName("com.mysql.cj.jdbc.Driver");
+            //            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
+            //
+            //            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
+            //
+            //            String name = u_log_name.getText().toUpperCase().trim();
+            //            String passeord = new String(u_log_pass.getPassword());
+            //
+            //            if (name.isEmpty() || passeord.isEmpty()) {
+                //            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
+                //            return; // Stop execution
+                //            }
+            //
+            //            pst.setString(1, name);
+            //            pst.setString(2, passeord);
+            //            ResultSet rs = pst.executeQuery();
+            //
+            //            if (rs.next()) {
+                ////              ealpswrd means db password , we a getting from sql field name password
+                //                String realpswrd=rs.getString("password");
+                ////              checking db pass with entered password
+                //                if(realpswrd.equals(passeord))
+                //                 {
+                    //                    User_DashBord udsh= new User_DashBord(name);
+                    //                    udsh.setVisible(true);
+                    //                    this.dispose();
+                    //                    JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + name + ".");
+                    //                 }
+                //                 else
+                //                 {
+                    //                   JOptionPane.showMessageDialog(this, "Incorrect password. Please try again.");
+                    //                 }
+                //            } else {
+                ////              System.out.println("Invalid credentials. Please try again.");
+                //                JOptionPane.showMessageDialog(this,"Invalid username. Please check your credentials and try again.");
+                //            }
+            //
+            //
+            //        } catch (Exception e) {
+            ////            System.out.println("Error: " + e.getMessage());
+            //            JOptionPane.showMessageDialog(this, e.getMessage());
+            //        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void u_log_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_log_passActionPerformed
         // TODO add your handling code here:
-        Sign_up login_to_Sign_up = new Sign_up();
-        login_to_Sign_up.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_u_log_passActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -347,6 +343,13 @@ public class User_Log_in extends javax.swing.JFrame {
         user_Login_page_to_admin_Login_page.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Sign_up login_to_Sign_up = new Sign_up();
+        login_to_Sign_up.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
