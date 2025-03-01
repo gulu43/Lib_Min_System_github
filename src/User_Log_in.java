@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -26,6 +27,7 @@ public class User_Log_in extends javax.swing.JFrame {
     /**
      * Creates new form User_Log_in
      */
+    
     public User_Log_in() {
         initComponents();
         
@@ -49,8 +51,14 @@ public class User_Log_in extends javax.swing.JFrame {
 
         setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximize the window
         this.getContentPane().setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBackground(new Color(255, 255, 255)); // Dark Blue
-        jPanel1.setBorder(new LineBorder(Color.BLACK, 1, true));
+        jPanel1.setBackground(new Color(255, 255, 255)); // white bg
+//        jPanel1.setBorder(new LineBorder(Color.BLACK, 1, true));
+        
+
+
+
+        
+
 
         for (Component btns : jPanel1.getComponents()) {
             if (btns instanceof JButton) {
@@ -80,10 +88,7 @@ public class User_Log_in extends javax.swing.JFrame {
             label.setForeground(new Color(0, 0, 0, 150)); // Gray text with slight transparency
             label.setBackground(new Color(0, 0, 0, 0)); // Fully transparent background
         }
-//    jPanel1.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
-//    jLabel1.setForeground(Color.BLUE); // blue text color
-//    jLabel1.setFont(new Font("Arial", Font.BOLD, 25)); // Arial Bold, Size 20
-
+    
     }
 
     /**
@@ -116,6 +121,7 @@ public class User_Log_in extends javax.swing.JFrame {
 
         jLabel5.setText("Don't hav an user account ? click on ");
 
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jButton2.setText("Sign-up");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,6 +132,7 @@ public class User_Log_in extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Admin Log-in Page");
 
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jButton3.setText("Go");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,23 +171,21 @@ public class User_Log_in extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(6, 6, 6)
-                                .addComponent(jButton2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(jButton3))
                             .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2)
+                                    .addComponent(jButton3)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -189,7 +194,11 @@ public class User_Log_in extends javax.swing.JFrame {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 82, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,36 +217,35 @@ public class User_Log_in extends javax.swing.JFrame {
                 .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jButton2)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
                         .addComponent(jButton3)))
-                .addGap(38, 38, 38))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(282, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(348, Short.MAX_VALUE))
+                .addGap(256, 256, 256))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(93, 93, 93)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         pack();
@@ -289,25 +297,25 @@ public class User_Log_in extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
         //        try {
-            //            Class.forName("com.mysql.cj.jdbc.Driver");
-            //            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
-            //
-            //            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
-            //
-            //            String name = u_log_name.getText().toUpperCase().trim();
-            //            String passeord = new String(u_log_pass.getPassword());
-            //
-            //            if (name.isEmpty() || passeord.isEmpty()) {
-                //            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
-                //            return; // Stop execution
-                //            }
-            //
-            //            pst.setString(1, name);
-            //            pst.setString(2, passeord);
-            //            ResultSet rs = pst.executeQuery();
-            //
-            //            if (rs.next()) {
-                ////              ealpswrd means db password , we a getting from sql field name password
+        //            Class.forName("com.mysql.cj.jdbc.Driver");
+        //            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "");
+        //
+        //            PreparedStatement pst = con.prepareStatement("SELECT * FROM user WHERE name = ? AND password = ?");
+        //
+        //            String name = u_log_name.getText().toUpperCase().trim();
+        //            String passeord = new String(u_log_pass.getPassword());
+        //
+        //            if (name.isEmpty() || passeord.isEmpty()) {
+        //            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
+        //            return; // Stop execution
+        //            }
+        //
+        //            pst.setString(1, name);
+        //            pst.setString(2, passeord);
+        //            ResultSet rs = pst.executeQuery();
+        //
+        //            if (rs.next()) {
+    ////              ealpswrd means db password , we a getting from sql field name password
                 //                String realpswrd=rs.getString("password");
                 ////              checking db pass with entered password
                 //                if(realpswrd.equals(passeord))
