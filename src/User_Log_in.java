@@ -52,14 +52,9 @@ public class User_Log_in extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximize the window
         this.getContentPane().setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBackground(new Color(255, 255, 255)); // white bg
-//        jPanel1.setBorder(new LineBorder(Color.BLACK, 1, true));
+        jPanel1.setBorder(new LineBorder(new java.awt.Color(0,0,0,0), 1, true));
         
-
-
-
         
-
-
         for (Component btns : jPanel1.getComponents()) {
             if (btns instanceof JButton) {
                 JButton btn = (JButton) btns;
