@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blue Gradient Background</title>
+        <style>
+        /* Gradient Background */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0A2EA1, #1B1E80);
+            overflow: hidden;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        /* Positioned Semi-Transparent Squares */
+        .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            width: 150px;
+            height: 150px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Square Positions */
+        .square.top-left {
+            bottom: -30%;
+            left: 5%;
+            transform: rotate(40deg);
+        }
+
+        .square.bottom-left {
+            top: -18%;
+            right: -8%;
+            transform: rotate(-50deg);
+        }
+
+        .square.top-right {
+            top: -40%;
+            right: 10%;
+            transform: rotate(-50deg);
+        }
+    </style>
+    </head>
+    <body>
+            <!-- Decorative Squares -->
+    <div class="square top-left"></div>
+    <div class="square bottom-left" ></div>
+    <div class="square top-right"></div>
+    </body>
+</html>
