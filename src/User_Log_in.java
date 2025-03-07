@@ -142,6 +142,14 @@ public class User_Log_in extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Password");
 
+        u_log_name.setText("DEMO1");
+        u_log_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                u_log_nameActionPerformed(evt);
+            }
+        });
+
+        u_log_pass.setText("1111");
         u_log_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 u_log_passActionPerformed(evt);
@@ -232,7 +240,7 @@ public class User_Log_in extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         pack();
@@ -302,6 +310,10 @@ public class User_Log_in extends javax.swing.JFrame {
         login_to_Sign_up.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void u_log_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_log_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_u_log_nameActionPerformed
 
     /**
      * @param args the command line arguments
