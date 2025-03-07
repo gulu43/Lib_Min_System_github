@@ -40,7 +40,7 @@ public class User_Log_in extends javax.swing.JFrame {
         c.gridy = 0;
         c.anchor = GridBagConstraints.CENTER;  // Align to top
 
-        c.insets = new Insets(30, 0, 0, 0);
+        c.insets = new Insets(130, 0, 0, 0);
         c.weightx = 1.0;
         c.weighty = 1.0;
 
@@ -108,12 +108,11 @@ public class User_Log_in extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel4.setText("Remanber username is in upper case");
 
         jLabel5.setText("Don't hav an user account ? click on ");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Sign-up");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +123,7 @@ public class User_Log_in extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Admin Log-in Page");
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setText("Go");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,12 +135,13 @@ public class User_Log_in extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User Login Page");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel2.setText("Name");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel3.setText("Password");
 
+        u_log_name.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         u_log_name.setText("DEMO1");
         u_log_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +149,7 @@ public class User_Log_in extends javax.swing.JFrame {
             }
         });
 
+        u_log_pass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         u_log_pass.setText("1111");
         u_log_pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +157,7 @@ public class User_Log_in extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Log-in");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,23 +174,23 @@ public class User_Log_in extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(u_log_name, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(u_log_name, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(33, 33, 33)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton2)
+                                .addComponent(jButton3)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 82, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -213,17 +214,18 @@ public class User_Log_in extends javax.swing.JFrame {
                 .addComponent(u_log_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(9, 9, 9)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton3)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

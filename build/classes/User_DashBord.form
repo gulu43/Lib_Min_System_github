@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="295" max="32767" attributes="0"/>
+              <EmptySpace pref="222" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,7 +49,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="239" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -61,20 +61,18 @@
                       <Component id="jLabel4" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton2" max="32767" attributes="0"/>
-                          <Component id="jButton1" max="32767" attributes="0"/>
-                          <Component id="jButton4" max="32767" attributes="0"/>
-                          <Component id="jButton5" min="-2" pref="100" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jButton6" min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="jButton7" min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" pref="92" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jButton2" max="32767" attributes="0"/>
+                      <Component id="jButton1" max="32767" attributes="0"/>
+                      <Component id="jButton4" max="32767" attributes="0"/>
+                      <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton7" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="82" max="32767" attributes="0"/>
               </Group>
@@ -135,7 +133,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
+              <Font name="Segoe UI" size="24" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="User DashBord Page"/>
@@ -143,7 +141,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="log-out"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Log Out"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
@@ -151,7 +152,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="go"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value=" Borrow a Book"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
@@ -160,14 +164,17 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Return Book"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="return"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Return a Book"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
@@ -176,14 +183,17 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="See borred books"/>
+            <Property name="text" type="java.lang.String" value="See borrowed books"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton7">
           <Properties>
-            <Property name="text" type="java.lang.String" value="See"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="View Borrowed Books"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
@@ -192,14 +202,17 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="See All Return books"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton8">
           <Properties>
-            <Property name="text" type="java.lang.String" value="seeR"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="View Returned Books"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
@@ -207,7 +220,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Load"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="View All Books"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -215,7 +231,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Load"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="View Staff Details"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -224,7 +243,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Staff Details"/>
           </Properties>
@@ -232,7 +251,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="See all Books"/>
           </Properties>
@@ -240,14 +259,17 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Find Book"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="find"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Search Book"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
@@ -256,7 +278,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Borrow Book"/>
           </Properties>

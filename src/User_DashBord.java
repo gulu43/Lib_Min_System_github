@@ -135,85 +135,93 @@ public class User_DashBord extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User DashBord Page");
 
-        jButton3.setText("log-out");
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setText("Log Out");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("go");
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton5.setText(" Borrow a Book");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel6.setText("Return Book");
 
-        jButton6.setText("return");
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setText("Return a Book");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("See borred books");
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel7.setText("See borrowed books");
 
-        jButton7.setText("See");
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton7.setText("View Borrowed Books");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setText("See All Return books");
 
-        jButton8.setText("seeR");
+        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton8.setText("View Returned Books");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Load");
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setText("View All Books");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Load");
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setText("View Staff Details");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel2.setText("Staff Details");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel3.setText("See all Books");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel4.setText("Find Book");
 
-        jButton4.setText("find");
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setText("Search Book");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel5.setText("Borrow Book");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -223,7 +231,7 @@ public class User_DashBord extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(51, 51, 51)
                 .addComponent(jButton3)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -234,18 +242,17 @@ public class User_DashBord extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7))
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -295,7 +302,7 @@ public class User_DashBord extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(273, 273, 273)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
