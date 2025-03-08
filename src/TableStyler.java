@@ -40,5 +40,6 @@ public class TableStyler {
                 return cell;
             }
         });
+        table.setDefaultEditor(Object.class, null);
     }
 }
