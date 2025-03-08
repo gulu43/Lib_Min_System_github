@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.sql.*;
@@ -86,74 +87,54 @@ public class User_Books_Aviable extends javax.swing.JFrame {
             }
         }
         // tables things are here
-//        customizeTable();
-
+          customizeTable();
     }
     
 
 
-//private void customizeTable() {
-//    // Remove default Metal look and feel
-//    try {
-//        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//    } catch (Exception e) {
-//        e.printStackTrace();
-//    }
-//
-//    JTableHeader header = table.getTableHeader();
-//    
-//    // Header: Dark Blue Background, White Text
-//    header.setFont(new Font("Segoe UI", Font.BOLD, 14));
-//    header.setBackground(new Color(10, 46, 161)); // Dark Blue
-//    header.setForeground(Color.WHITE);
-//    header.setOpaque(true);
-//
-//    table.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-//    table.setRowHeight(30);
-//    table.setShowGrid(false);
-//    table.setIntercellSpacing(new Dimension(0, 0));
-//
-//    // Custom renderer for alternate row colors (including "COPIES" column)
-//    DefaultTableCellRenderer renderer = new DefaultTableCellRenderer() {
-//        @Override
-//        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-//            Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-//            
-//            // Alternate row colors for all columns
-//            if (!isSelected) {
-//                if (row % 2 == 0) {
-//                    cell.setBackground(new Color(220, 220, 255)); // Light Blue
-//                } else {
-//                    cell.setBackground(Color.WHITE);
-//                }
-//                cell.setForeground(Color.BLACK);
-//            } else {
-//                // Selection color (Dark Blue)
-//                cell.setBackground(new Color(10, 46, 161));
-//                cell.setForeground(Color.WHITE);
-//            }
-//            
-//            return cell;
-//        }
-//    };
-//
-//    // Apply renderer to all columns (Fixing "COPIES" column issue)
-//    for (int i = 0; i < table.getColumnCount(); i++) {
-//        table.getColumnModel().getColumn(i).setCellRenderer(renderer);
-//    }
-//
-//    // Set column width
-//    TableColumnModel columnModel = table.getColumnModel();
-//    columnModel.getColumn(0).setPreferredWidth(100);
-//    columnModel.getColumn(1).setPreferredWidth(200);
-//    columnModel.getColumn(2).setPreferredWidth(150);
-//    columnModel.getColumn(3).setPreferredWidth(80);
-//
-//    // Center align "COPIES" column
-//    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-//    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
-//    table.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
-//}
+private void customizeTable() {
+    DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
+        headerRenderer.setBackground(new Color(10, 46, 161));
+        headerRenderer.setForeground(Color.WHITE);
+        headerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < table.getModel().getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+        }
+        
+        // Set column width
+        TableColumnModel columnModel = table.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(100);
+        columnModel.getColumn(1).setPreferredWidth(200);
+        columnModel.getColumn(2).setPreferredWidth(150);
+        columnModel.getColumn(3).setPreferredWidth(80);
+        
+        // Custom renderer for alternate row colors        
+        table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer(){
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
+                final Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+//                cell.setBackground(row % 2 == 0 ? new Color(220, 220, 255) : Color.WHITE);
+//                return cell;
+
+                // Alternate row colors for all columns
+                if (!isSelected) {
+                    if (row % 2 == 0) {
+                        cell.setBackground(new Color(220, 220, 255)); // Light Blue
+                    } else {
+                        cell.setBackground(Color.WHITE);
+                    }
+                    cell.setForeground(Color.BLACK);
+                } else {
+                    // Selection color (Dark Blue)
+                    cell.setBackground(new Color(10, 46, 161));
+                    cell.setForeground(Color.WHITE);
+                }
+
+                return cell;
+            }
+        });
+}
 
 
     /**
