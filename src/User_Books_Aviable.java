@@ -87,7 +87,13 @@ public class User_Books_Aviable extends javax.swing.JFrame {
             }
         }
         // tables things are here
-          customizeTable();
+//          customizeTable();
+        TableStyler.applyStyle(table);
+        TableColumnModel columnModel = table.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(100);
+        columnModel.getColumn(1).setPreferredWidth(200);
+        columnModel.getColumn(2).setPreferredWidth(150);
+        columnModel.getColumn(3).setPreferredWidth(80);
     }
     
 
