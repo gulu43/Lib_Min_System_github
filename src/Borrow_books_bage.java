@@ -1,10 +1,22 @@
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 
 /*
@@ -25,6 +37,71 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     public Borrow_books_bage(String id_) {
         this.userDash_id = id_;
         initComponents();
+         BackgroundPanel bgPanel = new BackgroundPanel(); 
+        setContentPane(bgPanel);
+        
+        GridBagLayout layout = new GridBagLayout();
+        getContentPane().setLayout(layout);
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.anchor = GridBagConstraints.CENTER;  // Align to top
+
+        c.insets = new Insets(30, 0, 0, 0);
+        c.weightx = 1.0;
+        c.weighty = 1.0;
+
+        getContentPane().add(jPanel1, c);
+
+        setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximize the window
+        this.getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new Color(255, 255, 255)); // white bg
+        jPanel1.setBorder(new LineBorder(new java.awt.Color(0,0,0,0), 1, true));
+        
+//        for (Component btns : jPanel1.getComponents()) {
+//            if (btns instanceof JButton) {
+//                JButton btn = (JButton) btns;
+//                btn.setBackground(new java.awt.Color(10, 46, 161));
+//                btn.setForeground(Color.WHITE);
+//                btn.setBorderPainted(false); // Removes border effect
+//                btn.setContentAreaFilled(false); // Removes lighting effect
+//                btn.setOpaque(true);
+//            }
+//        }
+           
+                btn1.setBackground(new java.awt.Color(10, 46, 161));
+                btn1.setForeground(Color.WHITE);
+                btn1.setBorderPainted(false); // Removes border effect
+                btn1.setContentAreaFilled(false); // Removes lighting effect
+                btn1.setOpaque(true);
+                   
+                btn2.setBackground(new java.awt.Color(10, 46, 161));
+//                btn1.setForeground(Color.WHITE);
+
+                
+        
+        for (Component inpts : jPanel1.getComponents()) {
+            if (inpts instanceof JTextField) {
+                JTextField txt = (JTextField) inpts;
+                txt.setBackground(new java.awt.Color(213, 213, 245));
+                txt.setForeground(Color.BLACK);
+                txt.setOpaque(true); // Makes background solid
+
+                Border simpleBorder = BorderFactory.createLineBorder(new java.awt.Color(213, 213, 245), 1, true);
+                txt.setBorder(simpleBorder);
+            }
+        }
+        for (Component labs : jPanel1.getComponents()) {
+            if (labs instanceof JLabel) { // Assuming 'labels' is a JLabel
+                JLabel txt = (JLabel) labs;
+                txt.setForeground(Color.BLACK);
+                txt.setBackground(new Color(0, 0, 0, 0));
+                txt.setOpaque(true); // Makes background solid
+
+            }
+        }
+        
     }
     public Borrow_books_bage() {
         initComponents();
@@ -39,14 +116,15 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        no_of_days = new javax.swing.JTextField();
+        u_l_var = new javax.swing.JLabel();
         book_n_val = new javax.swing.JTextField();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
         b_n_var = new javax.swing.JLabel();
-        no_of_days = new javax.swing.JTextField();
-        u_l_var = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,12 +132,24 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Borrow Book");
 
+        no_of_days.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        no_of_days.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                no_of_daysActionPerformed(evt);
+            }
+        });
+
+        u_l_var.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        u_l_var.setText("User_name");
+
+        book_n_val.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         book_n_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 book_n_valActionPerformed(evt);
             }
         });
 
+        btn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn1.setText("Search");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +157,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
             }
         });
 
-        btn2.setText("ok");
+        btn2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn2.setText("Borrow");
         btn2.setEnabled(false);
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,59 +166,74 @@ public class Borrow_books_bage extends javax.swing.JFrame {
             }
         });
 
+        b_n_var.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         b_n_var.setText("book_name");
 
-        u_l_var.setText("User_name");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(u_l_var, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_n_var, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                    .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_n_var, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(u_l_var, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(u_l_var, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(b_n_var, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(340, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addComponent(book_n_val, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(no_of_days, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b_n_var, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(u_l_var, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(246, 246, 246)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addGap(146, 146, 146)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(174, 174, 174))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
@@ -152,6 +258,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         while (rs.next()) {
             String name = rs.getString("name");
             JOptionPane.showMessageDialog(this, "This book is aviable:- "+name);
+            this.revalidate();
+            this.repaint();
 //            model.addRow(new Object[]{ name});  
             found = true;
         }
@@ -161,6 +269,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
             btn2.setEnabled(true); // Enable btn2 when book is found
         } else {
             JOptionPane.showMessageDialog(this, "Sorry, book not found. try to find it on find books page it has better seo ");
+            this.revalidate();
+            this.repaint();
             btn2.setEnabled(false); // Ensure btn2 remains disabled
         }
         
@@ -191,6 +301,8 @@ public class Borrow_books_bage extends javax.swing.JFrame {
 
     if (days > 14 || days < 0) {
         JOptionPane.showMessageDialog(this, "More than 14 days is not allowed. Auto-set to 14 days.");
+        this.revalidate();
+        this.repaint();
         days = 14;
     }
 
@@ -215,11 +327,20 @@ public class Borrow_books_bage extends javax.swing.JFrame {
 
             if (updatedRows > 0) {
                 JOptionPane.showMessageDialog(this, "One Book Borrowed! Copies updated.");
+                this.revalidate();
+                this.repaint();
+                System.out.println("process done");
+//                disable click btn
+                btn2.setEnabled(false); 
             } else {
                 JOptionPane.showMessageDialog(this, "Book borrowed, but copies were not updated (possibly 0 left).");
+                this.revalidate();
+                this.repaint();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Failed to borrow the book.");
+            this.revalidate();
+            this.repaint();
         }
 
         u_l_var.setText(null);
@@ -227,12 +348,18 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         no_of_days.setText(null);
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        this.revalidate();
+        this.repaint();
     }
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void book_n_valActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_n_valActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_book_n_valActionPerformed
+
+    private void no_of_daysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_no_of_daysActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_no_of_daysActionPerformed
     
     /**
      * @param args the command line arguments
@@ -276,6 +403,7 @@ public class Borrow_books_bage extends javax.swing.JFrame {
     private javax.swing.JButton btn2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField no_of_days;
     private javax.swing.JLabel u_l_var;
     // End of variables declaration//GEN-END:variables
