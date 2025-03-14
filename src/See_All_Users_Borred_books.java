@@ -32,7 +32,7 @@ public class See_All_Users_Borred_books extends javax.swing.JFrame {
      */
     public See_All_Users_Borred_books() {
         initComponents();
-        initComponents();
+        
          BackgroundPanel bgPanel = new BackgroundPanel(); 
         setContentPane(bgPanel);
         
