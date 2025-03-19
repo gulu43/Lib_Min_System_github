@@ -235,8 +235,23 @@ public class Sign_up extends javax.swing.JFrame {
             
             PreparedStatement st = con.prepareStatement("INSERT INTO user (`name`, `password`) VALUES (?,?)");
             
-            String id = user_id.getText().toUpperCase();
-            String pass =new String(user_pass.getPassword());
+            String id = user_id.getText().trim().toUpperCase();
+            String pass =new String(user_pass.getPassword()).trim();
+            
+            if (id.isEmpty() || pass.isEmpty()) { 
+            JOptionPane.showMessageDialog(this, "Fields cannot be empty");
+            return; 
+            
+            }
+            if (id.length() < 7) {
+            JOptionPane.showMessageDialog(this, "Username must be at least 7 characters long");
+            return;
+            }
+            
+            if (pass.length() < 4) {
+                JOptionPane.showMessageDialog(this, "Password must be at least 4 characters long");
+                return;
+            }
             
             st.setString(1,id);
             st.setString(2, pass);
