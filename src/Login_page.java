@@ -137,7 +137,7 @@ public class Login_page extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Not an admin ? , Back to ");
+        jLabel4.setText("Not an admin? , Back to ");
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Log-in page");

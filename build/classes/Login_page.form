@@ -148,7 +148,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Not an admin ? , Back to "/>
+            <Property name="text" type="java.lang.String" value="Not an admin? , Back to "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
