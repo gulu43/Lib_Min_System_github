@@ -41,7 +41,7 @@ public class See_All_Borrowed_books extends javax.swing.JFrame {
         c.gridy = 0;
         c.anchor = GridBagConstraints.CENTER;  // Align to top
 
-        c.insets = new Insets(30, 0, 0, 0);
+        c.insets = new Insets(0, 0, 0, 0);
         c.weightx = 1.0;
         c.weighty = 1.0;
 
