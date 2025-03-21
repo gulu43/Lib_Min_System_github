@@ -32,30 +32,34 @@ public class Costom_ComboBox extends BasicComboBoxUI {
     }
 
     @Override
-    protected ListCellRenderer createRenderer() {
-        return new DefaultListCellRenderer() {
-            @Override
-            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-                super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+protected ListCellRenderer createRenderer() {
+    return new DefaultListCellRenderer() {
+        @Override
+        public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+            super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
-                list.setSelectionBackground(selectionColor);
-                list.setBackground(backgroundColor);
-                list.setForeground(foregroundColor);
+            // Set dropdown list background
+            list.setSelectionBackground(selectionColor);
+            list.setBackground(backgroundColor);
+            list.setSelectionForeground(Color.WHITE);
 
-                if (isSelected) {
-                    setBackground(selectionColor);
-                    setForeground(Color.WHITE);
-                } else {
-                    setBackground(backgroundColor);
-                    setForeground(Color.BLACK);
-                }
-
-//                setFont(new Font("Arial", Font.BOLD, 14));
-                setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-
-                return this;
+            // Fix non-selected item text visibility
+            if (isSelected) {
+                setBackground(selectionColor);
+                setForeground(Color.WHITE);  // White text for selected item
+            } else {
+                setBackground(backgroundColor);
+                setForeground(Color.BLACK);  // Black text for better visibility
             }
-        };
-    }
+
+            // Ensure text is always clear
+            setFont(new Font("Arial", Font.BOLD, 14));
+            setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+
+            return this;
+        }
+    };
+}
+
 
 }
