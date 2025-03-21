@@ -28,7 +28,7 @@ public class Remove_Books extends javax.swing.JFrame {
      * Creates new form Remove_Books
      */
     public Remove_Books() {
-        initComponents();
+//        initComponents();
         initComponents();
          BackgroundPanel bgPanel = new BackgroundPanel(); 
         setContentPane(bgPanel);
