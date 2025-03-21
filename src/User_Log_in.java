@@ -40,7 +40,7 @@ public class User_Log_in extends javax.swing.JFrame {
         c.gridy = 0;
         c.anchor = GridBagConstraints.CENTER;  // Align to top
 
-        c.insets = new Insets(130, 0, 0, 0);
+        c.insets = new Insets(0, 0, 0, 0);
         c.weightx = 1.0;
         c.weighty = 1.0;
 
