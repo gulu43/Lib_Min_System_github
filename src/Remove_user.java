@@ -200,6 +200,10 @@ public class Remove_user extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db","root","");
             PreparedStatement prst = con.prepareStatement("delete from user where name =? ");
             String nameToDelete = t1.getText().toUpperCase();
+            if ( nameToDelete.isEmpty() ) { 
+            JOptionPane.showMessageDialog(this, "Fields cannot be empty");
+            return;
+            }
 //            System.out.println("check"+nameToDelete);
             prst.setString(1, nameToDelete);  
             
