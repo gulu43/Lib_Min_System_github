@@ -25,7 +25,6 @@ public class Remove_Staff extends javax.swing.JFrame {
     public Remove_Staff() {
         initComponents();
 //        setDefaultCloseOperation(Add_Books.DISPOSE_ON_CLOSE);
- initComponents();
          BackgroundPanel bgPanel = new BackgroundPanel(); 
         setContentPane(bgPanel);
         
