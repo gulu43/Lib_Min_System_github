@@ -317,6 +317,26 @@ public class Add_Books extends javax.swing.JFrame {
        String category=t2.getText().toUpperCase();
        String name=t3.getText().toUpperCase();
        String author=t4.getText().toUpperCase();
+       
+       if (id.isEmpty() || category.isEmpty() || name.isEmpty() || author.isEmpty()) { 
+            JOptionPane.showMessageDialog(this, "Fields cannot be empty");
+            return; 
+            
+            }
+            if (id.length() < 4) {
+            JOptionPane.showMessageDialog(this, "id must be at least 7 characters long");
+            return;
+            }
+            
+            if (name.length() < 2) {
+                JOptionPane.showMessageDialog(this, "Name must be at least 4 characters long");
+                return;
+            }
+//            if (author.length() < 2) {
+//                JOptionPane.showMessageDialog(this, "author must be at least 4 Number long");
+//                return;
+//            }
+       
        int copies=Integer.parseInt(t5.getText().toUpperCase());
         String checkquery="update books set copies=copies+"+copies+" where name='"+name+"' and category='"+category+"' and author='"+author+"';";
        try {
