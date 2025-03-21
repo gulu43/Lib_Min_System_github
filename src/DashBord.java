@@ -220,6 +220,11 @@ public class DashBord extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setText("Delete User ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton3.setText("See all User");
@@ -420,6 +425,12 @@ public class DashBord extends javax.swing.JFrame {
         Return_Book_Admin dashBord_to_Return_Book_Admin = new Return_Book_Admin();
         dashBord_to_Return_Book_Admin.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Remove_user dashBord_to_Remove_user = new Remove_user();
+        dashBord_to_Remove_user.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
