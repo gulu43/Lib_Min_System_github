@@ -235,6 +235,8 @@ public class Return_Book_Admin extends javax.swing.JFrame {
 
         if (userNameInput.isEmpty() || bookNameInput.isEmpty()) {
             JOptionPane.showMessageDialog(this, "User name or book name cannot be empty.");
+            this.revalidate();
+                this.repaint();
             return;
         }
 
@@ -259,14 +261,20 @@ public class Return_Book_Admin extends javax.swing.JFrame {
             while (rs.next()) {
                 String foundUser = rs.getString("name");
                 JOptionPane.showMessageDialog(this, "This user is available: " + foundUser);
+                this.revalidate();
+                this.repaint();
                 userFound = true;
             }
             if (!userFound) {
                 JOptionPane.showMessageDialog(this, "User not found.");
+                this.revalidate();
+                this.repaint();
             }
         } catch (Exception e) {
             userFound = false;
             JOptionPane.showMessageDialog(this, "Error searching user: " + e.getMessage());
+            this.revalidate();
+            this.repaint();
         }
 
         // 2. Find book name
@@ -280,14 +288,20 @@ public class Return_Book_Admin extends javax.swing.JFrame {
             while (rs.next()) {
                 String foundBook = rs.getString("name");
                 JOptionPane.showMessageDialog(this, "This book is available: " + foundBook);
+                this.revalidate();
+                this.repaint();
                 bookFound = true;
             }
             if (!bookFound) {
                 JOptionPane.showMessageDialog(this, "Book not found.");
+                this.revalidate();
+                this.repaint();
             }
         } catch (Exception e) {
             bookFound = false;
             JOptionPane.showMessageDialog(this, "Error searching book: " + e.getMessage());
+            this.revalidate();
+                this.repaint();
         }
 
         // Proceed if both user and book are found
@@ -377,12 +391,18 @@ public class Return_Book_Admin extends javax.swing.JFrame {
 
                 } else {
                     JOptionPane.showMessageDialog(this, "No borrowing data found for this user and book.");
+                    this.revalidate();
+                this.repaint();
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error fetching borrowed book data: " + e.getMessage());
+                this.revalidate();
+                this.repaint();
             }
         } else {
             JOptionPane.showMessageDialog(this, "User or book not found, or not available in our records.");
+            this.revalidate();
+                this.repaint();
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
