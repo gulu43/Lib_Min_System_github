@@ -14,7 +14,9 @@ import javax.swing.plaf.ComboBoxUI;
 public class Costom_ComboBox extends BasicComboBoxUI {
     private final Color selectionColor = new Color(10, 46, 161); // blue selection
     private final Color backgroundColor = new Color(213, 213, 245); // pur blue
-    private final Color foregroundColor = Color.black; // black text
+    private final Color foregroundColor = Color.black; // White text
+    private final Color borderColor = new Color(10, 46, 161); // Blue border
+    
 
     public static ComboBoxUI createUI(JComponent com) {
         return new Costom_ComboBox();
@@ -42,13 +44,13 @@ public class Costom_ComboBox extends BasicComboBoxUI {
 
                 if (isSelected) {
                     setBackground(selectionColor);
-                    setForeground(Color.BLACK);
+                    setForeground(Color.WHITE);
                 } else {
                     setBackground(backgroundColor);
-                    setForeground(foregroundColor);
+                    setForeground(Color.BLACK);
                 }
 
-                setFont(new Font("Arial", Font.BOLD, 14));
+//                setFont(new Font("Arial", Font.BOLD, 14));
                 setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
                 return this;
