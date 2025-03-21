@@ -76,6 +76,10 @@ public class Edit_admin extends javax.swing.JFrame {
 
             }
         }
+        
+        // costome combo name        
+        columnlist.setUI(Costom_ComboBox.createUI(columnlist));
+
     }
 
     /**
