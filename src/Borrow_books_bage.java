@@ -62,11 +62,11 @@ public class Borrow_books_bage extends javax.swing.JFrame {
 //        for (Component btns : jPanel1.getComponents()) {
 //            if (btns instanceof JButton) {
 //                JButton btn = (JButton) btns;
-//                btn.setBackground(new java.awt.Color(10, 46, 161));
-//                btn.setForeground(Color.WHITE);
-//                btn.setBorderPainted(false); // Removes border effect
-//                btn.setContentAreaFilled(false); // Removes lighting effect
-//                btn.setOpaque(true);
+                jButton2.setBackground(new java.awt.Color(10, 46, 161));
+                jButton2.setForeground(Color.WHITE);
+                jButton2.setBorderPainted(false); // Removes border effect
+                jButton2.setContentAreaFilled(false); // Removes lighting effect
+                jButton2.setOpaque(true);
 //            }
 //        }
            
