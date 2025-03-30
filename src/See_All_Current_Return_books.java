@@ -140,7 +140,7 @@ public class See_All_Current_Return_books extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("cancle");
+        jButton2.setText("cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

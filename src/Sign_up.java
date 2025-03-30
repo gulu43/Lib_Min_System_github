@@ -128,13 +128,13 @@ public class Sign_up extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Password");
 
-        jLabel2.setText("Note Name will be upper case by default");
+        jLabel2.setText("Note- Name will be upper case by default");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Back to Log-in page ?");
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("Click");
+        jButton2.setText("Log-in ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -261,6 +261,9 @@ public class Sign_up extends javax.swing.JFrame {
             System.out.println(count+"row affacted");
             JOptionPane.showMessageDialog(this,"Sign-up done, Go Back to Log-in page");
             
+            // Clear the text fields
+            user_id.setText("");
+            user_pass.setText("");
         } catch (Exception e) {
             System.out.println(e.getMessage());
                 JOptionPane.showMessageDialog(this,e.getMessage());

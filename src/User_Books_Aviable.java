@@ -178,7 +178,7 @@ private void customizeTable() {
             }
         });
 
-        jLabel1.setText("Books Copyes more than 5 are shown Here");
+        jLabel1.setText("Books Copies more than 5 are shown Here");
 
         table.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         table.setModel(new javax.swing.table.DefaultTableModel(
@@ -186,7 +186,7 @@ private void customizeTable() {
 
             },
             new String [] {
-                "JONRA", "NAME", "AUTHOR", "COPIES"
+                "GENRE", "NAME", "AUTHOR", "COPIES"
             }
         ));
         jScrollPane1.setViewportView(table);

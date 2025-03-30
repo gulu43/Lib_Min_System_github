@@ -103,7 +103,7 @@ public class See_All_Users_Borred_books extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Cancle");
+        jButton2.setText("cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -115,14 +115,14 @@ public class See_All_Users_Borred_books extends javax.swing.JFrame {
 
             },
             new String [] {
-                "User name", "Book name", "days left", "Due amt"
+                "User name", "Book name", "Days left", "Due amt"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("All Borred Books");
+        jLabel1.setText("All Borrowed Books");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Fetch");

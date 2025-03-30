@@ -84,7 +84,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cancle"/>
+            <Property name="text" type="java.lang.String" value="cancel"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -103,7 +103,7 @@
                   <Table columnCount="4" rowCount="0">
                     <Column editable="true" title="User name" type="java.lang.Object"/>
                     <Column editable="true" title="Book name" type="java.lang.Object"/>
-                    <Column editable="true" title="days left" type="java.lang.Object"/>
+                    <Column editable="true" title="Days left" type="java.lang.Object"/>
                     <Column editable="true" title="Due amt" type="java.lang.Object"/>
                   </Table>
                 </Property>
@@ -144,7 +144,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="All Borred Books"/>
+            <Property name="text" type="java.lang.String" value="All Borrowed Books"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">

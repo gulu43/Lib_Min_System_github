@@ -171,7 +171,7 @@ public class Borrow_books_bage extends javax.swing.JFrame {
         b_n_var.setText("book_name");
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Cancle");
+        jButton2.setText("cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

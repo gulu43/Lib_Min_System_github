@@ -80,7 +80,23 @@ public class User_Log_in extends javax.swing.JFrame {
             label.setForeground(new Color(0, 0, 0, 150)); // Gray text with slight transparency
             label.setBackground(new Color(0, 0, 0, 0)); // Fully transparent background
         }
-    
+        JButton btn = (JButton) jButton3;
+        btn.setBackground(new java.awt.Color(10, 46, 161));
+        btn.setForeground(Color.WHITE);
+        btn.setBorderPainted(false); // Removes border effect
+        btn.setContentAreaFilled(false); // Removes lighting effect
+        btn.setOpaque(true);
+        
+        ButtonUtils.makeButtonRounded(jButton3, 15, new java.awt.Color(10, 46, 161), Color.WHITE);
+        
+        JButton btn1 = (JButton) jButton2;
+        btn1.setBackground(new java.awt.Color(10, 46, 161));
+        btn1.setForeground(Color.WHITE);
+        btn1.setBorderPainted(false); // Removes border effect
+        btn1.setContentAreaFilled(false); // Removes lighting effect
+        btn1.setOpaque(true);
+        
+        ButtonUtils.makeButtonRounded(jButton2, 15, new java.awt.Color(10, 46, 161), Color.WHITE);
     }
 
     /**
@@ -110,7 +126,7 @@ public class User_Log_in extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Remanber username is in upper case");
 
-        jLabel5.setText("Don't hav an user account ? click on ");
+        jLabel5.setText("Don't have an user account ? click on ");
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Sign-up");

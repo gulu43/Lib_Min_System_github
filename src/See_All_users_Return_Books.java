@@ -110,7 +110,7 @@ public class See_All_users_Return_Books extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("cancle");
+        jButton2.setText("cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -122,7 +122,7 @@ public class See_All_users_Return_Books extends javax.swing.JFrame {
 
             },
             new String [] {
-                "User name", "Book name", "days left", "Due amt"
+                "User name", "Book name", "Days left", "Due amt"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
