@@ -28,6 +28,12 @@ public class DashBord extends javax.swing.JFrame {
      */
     public DashBord() {
         initComponents();
+        
+        // I added them for offline support 
+        staff_detail.setVisible(false);
+        hire_staff.setVisible(false);
+        fire_staff.setVisible(false);
+        
         BackgroundPanel bgPanel = new BackgroundPanel(); 
         setContentPane(bgPanel);
         
@@ -109,16 +115,16 @@ public class DashBord extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         add_book = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        fire_staff = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        hire_staff = new javax.swing.JButton();
-        staff_detail = new javax.swing.JButton();
         dashBord_edit_btn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        hire_staff = new javax.swing.JButton();
+        fire_staff = new javax.swing.JButton();
+        staff_detail = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,14 +176,6 @@ public class DashBord extends javax.swing.JFrame {
             }
         });
 
-        fire_staff.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        fire_staff.setText("Fire Staff");
-        fire_staff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fire_staffActionPerformed(evt);
-            }
-        });
-
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton7.setText("Return Books");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -186,24 +184,8 @@ public class DashBord extends javax.swing.JFrame {
             }
         });
 
-        hire_staff.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        hire_staff.setText("Hire Staff");
-        hire_staff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hire_staffActionPerformed(evt);
-            }
-        });
-
-        staff_detail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        staff_detail.setText("Staff Detail");
-        staff_detail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staff_detailActionPerformed(evt);
-            }
-        });
-
         dashBord_edit_btn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        dashBord_edit_btn.setText("Edit Admin Credentials");
+        dashBord_edit_btn.setText("Edit Admin ");
         dashBord_edit_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dashBord_edit_btnActionPerformed(evt);
@@ -247,43 +229,43 @@ public class DashBord extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(add_book, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(hire_staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(book_available, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(remove_book, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(staff_detail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fire_staff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(dashBord_edit_btn))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton4))
-                        .addGap(18, 18, 18)
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(40, 40, 40))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(22, 22, 22))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton4))
+                                        .addGap(18, 18, 18)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton5)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(book_available, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(dashBord_edit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(add_book, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(remove_book, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                                .addComponent(jButton1))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,20 +274,14 @@ public class DashBord extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(staff_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(book_available, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(book_available, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dashBord_edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(add_book, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hire_staff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fire_staff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(remove_book, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(dashBord_edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -320,74 +296,79 @@ public class DashBord extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
+
+        hire_staff.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        hire_staff.setText("H");
+        hire_staff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hire_staffActionPerformed(evt);
+            }
+        });
+
+        fire_staff.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        fire_staff.setText("F");
+        fire_staff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fire_staffActionPerformed(evt);
+            }
+        });
+
+        staff_detail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        staff_detail.setText("D");
+        staff_detail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staff_detailActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(415, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(187, 187, 187))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(324, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(368, 368, 368))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hire_staff, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fire_staff, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(staff_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(172, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(258, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(162, 162, 162))
+                .addGap(41, 41, 41)
+                .addComponent(staff_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fire_staff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hire_staff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void book_availableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_availableActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Books_Avialable books = new Books_Avialable();
-        books.setVisible(true);
-        
-    }//GEN-LAST:event_book_availableActionPerformed
+        Sell_all_users dashbor_to_see_all_data = new Sell_all_users();
+        dashbor_to_see_all_data.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void remove_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_bookActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Remove_Books rem_bok_obj = new Remove_Books();
-        rem_bok_obj.setVisible(true);
-    }//GEN-LAST:event_remove_bookActionPerformed
-
-    private void add_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_bookActionPerformed
-        // TODO add your handling code here:
-        Add_Books ad_obj = new Add_Books();
-        ad_obj.setVisible(true);
-//        this.dispose();
-    }//GEN-LAST:event_add_bookActionPerformed
-
-    private void fire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fire_staffActionPerformed
-        // TODO add your handling code here:
-        Remove_Staff rStaff = new Remove_Staff();
-        rStaff.setVisible(true);
-    }//GEN-LAST:event_fire_staffActionPerformed
-
-    private void hire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hire_staffActionPerformed
-        // TODO add your handling code here:
-        Hire_emp he_obj = new Hire_emp();
-        he_obj.setVisible(true);
-    }//GEN-LAST:event_hire_staffActionPerformed
-
-    private void staff_detailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staff_detailActionPerformed
-        // TODO add your handling code here:
-        Staff_Details staff_details_obj = new Staff_Details();
-        staff_details_obj.setVisible(true);
-//           this.dispose();
-    }//GEN-LAST:event_staff_detailActionPerformed
-
-    private void dashBord_edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBord_edit_btnActionPerformed
-        // TODO add your handling code here:
-        Edit_admin edit_admin_obj = new Edit_admin();
-        edit_admin_obj.setVisible(true);
-    }//GEN-LAST:event_dashBord_edit_btnActionPerformed
+        Remove_user dashBord_to_Remove_user = new Remove_user();
+        dashBord_to_Remove_user.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -396,29 +377,24 @@ public class DashBord extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void dashBord_edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashBord_edit_btnActionPerformed
         // TODO add your handling code here:
-        Sell_all_users dashbor_to_see_all_data = new Sell_all_users();
-        dashbor_to_see_all_data.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        Edit_admin edit_admin_obj = new Edit_admin();
+        edit_admin_obj.setVisible(true);
+    }//GEN-LAST:event_dashBord_edit_btnActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void staff_detailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staff_detailActionPerformed
         // TODO add your handling code here:
-        See_All_users_Return_Books dash_bord_to_See_All_users_Return_Books = new See_All_users_Return_Books();
-        dash_bord_to_See_All_users_Return_Books.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+        Staff_Details staff_details_obj = new Staff_Details();
+        staff_details_obj.setVisible(true);
+        //           this.dispose();
+    }//GEN-LAST:event_staff_detailActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void hire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hire_staffActionPerformed
         // TODO add your handling code here:
-        See_All_Users_Borred_books dashbord_to_See_All_Users_Borred_books = new See_All_Users_Borred_books();
-        dashbord_to_See_All_Users_Borred_books.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        Admin_Borrow_book userAdmin_Borrow_book = new Admin_Borrow_book();
-        userAdmin_Borrow_book.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+        Hire_emp he_obj = new Hire_emp();
+        he_obj.setVisible(true);
+    }//GEN-LAST:event_hire_staffActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -426,11 +402,49 @@ public class DashBord extends javax.swing.JFrame {
         dashBord_to_Return_Book_Admin.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void fire_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fire_staffActionPerformed
         // TODO add your handling code here:
-        Remove_user dashBord_to_Remove_user = new Remove_user();
-        dashBord_to_Remove_user.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Remove_Staff rStaff = new Remove_Staff();
+        rStaff.setVisible(true);
+    }//GEN-LAST:event_fire_staffActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Admin_Borrow_book userAdmin_Borrow_book = new Admin_Borrow_book();
+        userAdmin_Borrow_book.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void add_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_bookActionPerformed
+        // TODO add your handling code here:
+        Add_Books ad_obj = new Add_Books();
+        ad_obj.setVisible(true);
+        //        this.dispose();
+    }//GEN-LAST:event_add_bookActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        See_All_users_Return_Books dash_bord_to_See_All_users_Return_Books = new See_All_users_Return_Books();
+        dash_bord_to_See_All_users_Return_Books.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void remove_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_bookActionPerformed
+        // TODO add your handling code here:
+        Remove_Books rem_bok_obj = new Remove_Books();
+        rem_bok_obj.setVisible(true);
+    }//GEN-LAST:event_remove_bookActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        See_All_Users_Borred_books dashbord_to_See_All_Users_Borred_books = new See_All_Users_Borred_books();
+        dashbord_to_See_All_Users_Borred_books.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void book_availableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_availableActionPerformed
+        // TODO add your handling code here:
+        Books_Avialable books = new Books_Avialable();
+        books.setVisible(true);
+
+    }//GEN-LAST:event_book_availableActionPerformed
 
     /**
      * @param args the command line arguments
